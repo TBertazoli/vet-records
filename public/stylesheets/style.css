@@ -1,0 +1,40 @@
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 100 to 900 */
+
+.navbar {
+  ul {
+    display: flex;
+    margin-left: auto;
+  }
+
+  button {
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: medium;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  margin: 10px 0;
+  display: block;
+}
+.nav-item {
+  font: size 12px;
+  padding: 9px 20px;
+  color: #1a1b1f;
+}
