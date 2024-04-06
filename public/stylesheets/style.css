@@ -38,3 +38,17 @@
   padding: 9px 20px;
   color: #1a1b1f;
 }
+
+/* footer */
+.card-text {
+  font-size: 0.875rem;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  border-color: transparent !important;
+}
