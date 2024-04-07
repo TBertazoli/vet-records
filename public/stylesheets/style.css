@@ -48,7 +48,7 @@
 h5 {
   font-size: 12px;
 }
-#hero {
+.hero {
   background-image: url("../images/pet1.jpeg");
   height: 620px;
   background-position: center;
@@ -68,14 +68,10 @@ h5 {
     border-color: transparent;
   }
 }
+
 #hero-text {
   text-align: center;
   padding: 150px;
-}
-#card-one {
-  background-image: url("../images/pet2.jpeg");
-  background-size: cover;
-  background-position: center;
 }
 
 /* ------index cards----- */
@@ -135,3 +131,39 @@ footer {
   border-color: transparent !important;
   opacity: 87%;
 }
+
+/* -----media queries----- */
+@media (max-width: 1000px) {
+  .animal-right {
+    padding: 0px;
+  }
+  .animal-left {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 390px) {
+  .hero {
+    height: auto;
+    h1 {
+      font-size: 40px;
+    }
+    #hero-text {
+      padding: 100px 0px;
+    }
+  }
+  .animal {
+    .card-body {
+      padding: 10px 0px;
+    }
+  }
+}
+
+/* // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */
