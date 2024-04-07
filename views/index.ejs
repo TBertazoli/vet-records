@@ -1,7 +1,60 @@
-<%- include('./partials/header') %>
-<%- include('./partials/navbar') %>
-  <body>
-    here
-  </body>
-</html>
-<%- include('./partials/footer') %>
+<header>
+  <%- include('./partials/header') %> <%- include('./partials/navbar') %>
+</header>
+<body>
+  <%-include('./partials/heroSection') %>
+  <div class="container-md text-center mt-5" id="index-text">
+    <label class="montserrat-medium">WHAT WE BELIEVE IN</label>
+    <h2 class="montserrat-regular">
+      We strive to ensure that pet owners have access to their pet's records by
+      making it accessible and convenient for them
+    </h2>
+  </div>
+  <div class="container-md animal">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-sm">
+          <div class="card-body">
+            <label class="montserrat-medium">ABOUT</label>
+            <h2 class="montserrat-regular">Who we are</h2>
+            <p class="montserrat-regular">
+              We are a dedicated team of one person committed to simplifying the
+              process of accessing and managing pet vaccination records. Our
+              Platform offers pet owners convenient access to their beloved
+              companions heath history, ensuring peace of mind and streamlined
+              pet care management
+            </p>
+            <button class="montserrat-regular">LEARN MORE</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <img class="animal-left" src="../../images/pet2.jpeg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-md animal">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-sm">
+          <img class="animal-right" src="../../images/pet3.jpeg" />
+        </div>
+        <div class="col-sm">
+          <div class="card-body rg">
+            <label class="montserrat-medium">TEAM</label>
+            <h2 class="montserrat-regular">What we do</h2>
+            <p class="montserrat-regular">
+              We provide user-friendly online platform where pet owners can
+              securely store and access their pet's vaccination records anytime,
+              anywhere. Our service aims to simplify pet care management by
+              centralizing crucial health information, ensuring pets receive
+              timely vaccinations and optimal healthcare.
+            </p>
+            <button class="montserrat-regular">LEARN MORE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer><%- include('./partials/footer') %></footer>

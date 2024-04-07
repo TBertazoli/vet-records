@@ -1,19 +1,5 @@
 /* <uniquifier>: Use a unique and descriptive class name */
 /* <weight>: Use a value from 100 to 900 */
-
-.navbar {
-  ul {
-    display: flex;
-    margin-left: auto;
-  }
-
-  button {
-    color: white;
-    font-size: 16px;
-    padding: 12px 25px;
-  }
-}
-
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -28,6 +14,19 @@
   font-style: medium;
 }
 
+/* -----navbar----- */
+.navbar {
+  ul {
+    display: flex;
+    margin-left: auto;
+  }
+
+  button {
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
 .navbar-brand {
   font-size: 24px;
   margin: 10px 0;
@@ -39,16 +38,100 @@
   color: #1a1b1f;
 }
 
-/* footer */
-.card-text {
-  font-size: 0.875rem;
+/* ------hero section----- */
+#index-text {
+  p {
+    font-size: 36px;
+    margin: 10px 0px 15px 0px;
+  }
+}
+h5 {
+  font-size: 12px;
+}
+#hero {
+  background-image: url("../images/pet1.jpeg");
+  height: 620px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: aliceblue;
+    font-size: 64px;
+  }
+
+  button {
+    background-color: white;
+    font-size: 14px;
+    color: black;
+    padding: 16px 35px;
+    border-color: transparent;
+  }
+}
+#hero-text {
+  text-align: center;
+  padding: 150px;
+}
+#card-one {
+  background-image: url("../images/pet2.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
-.card-title {
-  display: flex;
-  justify-content: space-evenly;
+/* ------index cards----- */
+.animal {
+  img {
+    width: inherit;
+  }
+
+  .card-body {
+    padding: 150px 0px;
+    font-size: 16px;
+  }
+  h2 {
+    padding-bottom: 20px;
+  }
+  button {
+    background-color: black;
+    color: white;
+    padding: 16px 35px;
+    border-color: transparent;
+  }
+  .container {
+    padding-top: 30px;
+  }
+}
+.animal-left {
+  padding-left: 100px;
+}
+.animal-right {
+  padding-right: 100px;
+}
+h2 {
+  padding: 20px 0px 40px 0px;
+  font-size: 12px;
+}
+p,
+label {
+  color: grey;
 }
 
+/* ----footer------ */
+footer {
+  .card-text {
+    font-size: 0.875rem;
+  }
+
+  .card-title {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  a {
+    color: black;
+  }
+}
 .card {
   border-color: transparent !important;
+  opacity: 87%;
 }
