@@ -14,6 +14,28 @@
   font-style: medium;
 }
 
+.card {
+  border-color: transparent !important;
+  opacity: 87%;
+}
+
+.bkg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  font-size: 64px;
+  text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+  /* padding: 20px 0px 40px 0px; */
+  font-size: 36px;
+}
+
 /* -----navbar----- */
 .navbar {
   ul {
@@ -51,13 +73,10 @@ h5 {
 .hero {
   background-image: url("../images/pet1.jpeg");
   height: 620px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 
-  h1 {
-    color: aliceblue;
-    font-size: 64px;
+  p {
+    color: black;
+    text-shadow: 2px 2px 10px white;
   }
 
   button {
@@ -67,6 +86,11 @@ h5 {
     padding: 16px 35px;
     border-color: transparent;
   }
+}
+
+.about {
+  background-image: url("../images/pet4.jpeg");
+  height: 480px;
 }
 
 #hero-text {
@@ -103,13 +127,14 @@ h5 {
 .animal-right {
   padding-right: 100px;
 }
-h2 {
-  padding: 20px 0px 40px 0px;
-  font-size: 12px;
-}
+
 p,
 label {
   color: grey;
+}
+
+label {
+  font-size: 12px;
 }
 
 /* ----footer------ */
@@ -124,46 +149,59 @@ footer {
   }
 
   a {
-    color: black;
+    color: gray;
   }
-}
-.card {
-  border-color: transparent !important;
-  opacity: 87%;
 }
 
 /* -----media queries----- */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+  /* .hero {
+    height: auto;
+  } */
+  .animal {
+    .card-body {
+      padding: 56px 40px;
+    }
+  }
   .animal-right {
     padding: 0px;
   }
   .animal-left {
     padding: 0px;
   }
+  #hero-text {
+    padding: 100px 0px;
+  }
 }
 
-@media (min-width: 390px) {
+@media (max-width: 992px) {
   .hero {
-    height: auto;
     h1 {
       font-size: 40px;
     }
-    #hero-text {
-      padding: 100px 0px;
-    }
   }
   .animal {
-    .card-body {
-      padding: 10px 0px;
+    .row {
+      display: flex;
+      flex-direction: column-reverse;
     }
+  }
+  .navbar {
+    button {
+      font-size: 10px;
+      padding: 5px 6px;
+    }
+    ul {
+      font-size: 10px;
+    }
+  }
+  h2 {
+    font-size: 30px;
   }
 }
 
-/* // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... } */
+@media (max-width: 768px) {
+  #nav {
+    max-width: none;
+  }
+}

@@ -8,6 +8,7 @@ require("dotenv").config();
 require("./config/database");
 
 const indexRouter = require("./routes/index");
+const aboutRouter = require("./routes/about");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/about", aboutRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
