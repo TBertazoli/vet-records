@@ -16,22 +16,30 @@
       </button>
     </div>
   </div>
-  <div class="container-md mt-5">
+  <div class="container-md mt-5 account">
     <h3 class="montserrat-regular">Hello&nbsp;<%=user.name%>!</h3>
-    <!-- if statement starts here -->
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="row">    
+      <% if (user.pets.length) { %> <% user.pets.forEach((p) => { %>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            
+            <div class="card-body">
+             <h3 class="card-subtitle mb-2 montserrat-regular""><%=p.petName%></h3>
+                <div class="card-text montserrat-regular">
+                <p> Type: <%=p.petType%><br>
+                <p type="date"> Date of Birth: <%=p.petDateOfBirth%></p>  
+                </div>    
+                <a href="#" class="card-link">View</a>        
+            </div>
+          </div>
+        
       </div>
-    </div>
-    <!-- finish here -->
-  </div>
+      </div>
+    <% }); %>
+   <% } else { %>
+    <h3>You have not added any Pets yet!</h3>
+    <% }; %>
+   </div>
+  
 </body>
 <footer><%- include('../partials/footer') %></footer>
