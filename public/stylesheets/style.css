@@ -36,17 +36,17 @@ h2 {
   font-size: 36px;
 }
 
-/* -----navbar----- */
-.navbar {
-  ul {
-    display: flex;
-    margin-left: auto;
-  }
+button {
+  color: white;
+  font-size: 16px;
+  padding: 12px 25px;
 
-  button {
-    color: white;
-    font-size: 16px;
-    padding: 12px 25px;
+  /* -----navbar----- */
+  .navbar {
+    ul {
+      display: flex;
+      margin-left: auto;
+    }
   }
 }
 .navbar-brand {
