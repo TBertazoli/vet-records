@@ -18,25 +18,27 @@
       </div>
 
       <div class="modal-body">
-        <form action="/account" method="POST">
+        <form action="/account/pets" method="POST">
           <div class="mb-3">
-            <label for="petType" class="form-label">Pet Type</label>
-            <option>Cat</option>
-            <option>Dog</option>
+            <label class="form-label">Pet Type</label>
+            <select name="petType">
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+            </select>
           </div>
           <div class="mb-3">
-            <label for="petName" class="form-label">Pet Name</label>
-            <input type="text" class="form-control" id="petName" />
+            <label class="form-label">Pet Name</label>
+            <input type="text" class="form-control" name="petName" />
           </div>
           <div class="mb-3">
-            <label for="dateOfBirth" class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" id="dateOfBirth" />
+            <label class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" name="petDateOfBirth" />
           </div>
           <div class="mb-3">
-            <label for="breed">Breed</label>
-            <input type="text" class="form-control" id="breed" />
+            <label>Breed</label>
+            <input type="text" class="form-control" name="breed" />
           </div>
-          <button type="button" class="montserrat-regular bg-black">
+          <button type="submit" class="montserrat-regular bg-black">
             SAVE
           </button>
         </form>

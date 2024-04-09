@@ -1,7 +1,7 @@
-// const express = require("express");
-// const router = express.Router();
-// const petsCtrl = require("../controllers/pets");
+const express = require("express");
+const router = express.Router();
+const petsCtrl = require("../controllers/pets");
 
-// router.post("/account/:id/pets", petsCtrl.create);
+router.post(`/account/pets`, petsCtrl.create);
 
-// module.exports = router;
+module.exports = router;
