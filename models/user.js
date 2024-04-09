@@ -33,6 +33,12 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     animals: [animalSchema],
+    vaccine: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Vaccine",
+      },
+    ],
   },
 
   {
