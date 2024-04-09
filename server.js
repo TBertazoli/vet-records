@@ -3,12 +3,14 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
 
 require("dotenv").config();
 require("./config/database");
 
 const indexRouter = require("./routes/index");
 const aboutRouter = require("./routes/about");
+const contactRouter = require("./routes/contact");
 
 const app = express();
 
@@ -22,8 +24,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//session
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 app.use("/", indexRouter);
 app.use("/about", aboutRouter);
+app.use("/contact", contactRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

@@ -1,0 +1,40 @@
+<header>
+  <%- include('../partials/header') %> <%- include('../partials/navbar') %>
+</header>
+<body>
+  <div class="container-md about bkg">
+    <div id="hero-text">
+      <h1 class="montserrat-regular">Contact Us</h1>
+    </div>
+  </div>
+  <div class="container-md">
+    <form>
+      <div class="mb-3">
+        <label for="contact-name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="contact-name"
+          placeholder="Enter your name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+<footer><%- include('../partials/footer') %></footer>
