@@ -1,0 +1,69 @@
+<header>
+  <%- include('../partials/header') %> <%- include('../partials/navbar') %>
+</header>
+<body>
+  <div class="container-md about bkg">
+    <div id="hero-text">
+      <h1 class="montserrat-regular">Contact Us</h1>
+    </div>
+  </div>
+  <div class="container-md mt-5">
+    <div class="row">
+      <div class="col">
+        <h2 class="montserrat-regular">Contact Us</h2>
+        <p class="montserrat-regular">
+          We strive to provide the best service for our customers. If you have
+          any question, comments or sugestions for improvents please send us an
+          inquire.
+        </p>
+        <form>
+          <div class="mb-3">
+            <label for="contact-name" class="form-label">NAME</label>
+            <input
+              type="text"
+              class="form-control"
+              id="contact-name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail1" class="form-label">EMAIL ADDRESS</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputMessage" class="form-label">MESSAGE</label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="inputMessage"
+              aria-describedby="emailHelp"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="montserrat-regular bg-black">
+            SUBMIT
+          </button>
+        </form>
+      </div>
+      <div class="col">
+        <label>OUR OFFICES</label>
+        <p>Our headquarter is located in the heart of Texas - USA</p>
+        <p>Richmond, Texas<br />USA<br />77407</p>
+        <label>WORKING HOURS</label>
+        <p>8AM - 5PM, Mon to Fri</p>
+        <label>CONTACT</label><br />
+        <a href="mailto:tatiana.bertazoli.com">tatiana@bertazoli.com</a><br />
+        <a href="https://github.com/TBertazoli"
+          >https://github.com/TBertazoli</a
+        >
+      </div>
+    </div>
+  </div>
+</body>
+<footer><%- include('../partials/footer') %></footer>
