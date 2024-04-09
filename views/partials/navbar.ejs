@@ -18,15 +18,24 @@
           <li class="nav-item">
             <a class="nav-link" href="/about">ABOUT </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/vaccines">VACCINE </a>
+          </li>
+          <% if (user) { %>
           <li class="nav-item">
             <a class="nav-link" href="/account">ACCOUNT </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/vaccines">VACCINE </a>
+            <a class="nav-link" href="/logout">LOGOUT</a>
           </li>
+          <% } else { %>
           <li class="nav-item">
-            <a class="nav-link" href="">LOGIN/SIGNUP </a>
+            <a class="nav-link login" href="/auth/google"
+              >LOGIN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+            /></a>
           </li>
+          <% } %>
         </ul>
         <a href="/contact">
           <button class="montserrat-regular bg-black">CONTACT US</button>

@@ -60,6 +60,10 @@ h2 {
   color: #1a1b1f;
 }
 
+.login img {
+  height: 25px;
+}
+
 /* ------hero section----- */
 #index-text {
   p {
