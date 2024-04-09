@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const animalSchema = new Schema({
+const petSchema = new Schema({
   name: {
     type: String,
   },
@@ -18,9 +18,7 @@ const animalSchema = new Schema({
   Breed: {
     type: String,
   },
-  color: {
-    type: String,
-  },
+
   vaccine: [
     {
       type: Schema.Types.ObjectId,
@@ -38,7 +36,7 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
-    animals: [animalSchema],
+    pets: [petSchema],
   },
 
   {

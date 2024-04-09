@@ -1,0 +1,46 @@
+<div
+  class="modal fade"
+  id="petModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title montserrat-regular">Add a pet</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="/account" method="POST">
+          <div class="mb-3">
+            <label for="petType" class="form-label">Pet Type</label>
+            <option>Cat</option>
+            <option>Dog</option>
+          </div>
+          <div class="mb-3">
+            <label for="petName" class="form-label">Pet Name</label>
+            <input type="text" class="form-control" id="petName" />
+          </div>
+          <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" />
+          </div>
+          <div class="mb-3">
+            <label for="breed">Breed</label>
+            <input type="text" class="form-control" id="breed" />
+          </div>
+          <button type="button" class="montserrat-regular bg-black">
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

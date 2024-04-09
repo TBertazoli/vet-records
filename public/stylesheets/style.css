@@ -141,6 +141,13 @@ label {
   font-size: 12px;
 }
 
+/* -----modal------ */
+modal {
+  button {
+    padding: 5px;
+  }
+}
+
 /* ----footer------ */
 footer {
   .card-text {

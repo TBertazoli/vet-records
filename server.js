@@ -14,6 +14,8 @@ require("./config/passport");
 const indexRouter = require("./routes/index");
 const aboutRouter = require("./routes/about");
 const contactRouter = require("./routes/contact");
+const accountRouter = require("./routes/account");
+const petsRouter = require("./routes/pets");
 
 const app = express();
 
@@ -48,6 +50,8 @@ app.use(function (req, res, next) {
 app.use("/", indexRouter);
 app.use("/about", aboutRouter);
 app.use("/contact", contactRouter);
+app.use("/account", accountRouter);
+// app.use("/", petsRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
