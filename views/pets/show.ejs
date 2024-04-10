@@ -1,0 +1,22 @@
+<%- include('../partials/addPetModal') %>
+<header>
+  <%- include('../partials/header') %> <%- include('../partials/navbar') %>
+</header>
+<body>
+  <div class="container-md about bkg">
+    <div id="hero-text">
+      <h1 class="montserrat-regular"><%= pet.petName %></h1>
+    </div>
+  </div>
+  <div class="container-md mt-5">
+    <p>Pet Type: <%= pet.petType %></p>
+    <p>Date of Birth: <%= pet.petDateOfBirth %></p>
+    <p>Breed: <%= pet.breed %></p>
+  </div>
+  <div class="container-md" mt-5>
+    <button type="button" class="montserrat-regular bg-black">
+      Add Vacine
+    </button>
+  </div>
+</body>
+<footer><%- include('../partials/footer') %></footer>

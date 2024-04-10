@@ -4,8 +4,9 @@ const session = require("express-session");
 const passport = require("passport");
 
 router.get("/", function (req, res, next) {
-  console.log(req.user);
-
+  if (req.user === undefined) {
+    res.render("/");
+  }
   res.render("account/index");
 });
 

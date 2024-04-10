@@ -15,7 +15,7 @@ const petSchema = new Schema({
     type: Date,
     required: true,
   },
-  Breed: {
+  breed: {
     type: String,
   },
 
