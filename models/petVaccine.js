@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const vaccineSchema = new Schema({
+const petVaccineSchema = new Schema({
   species: {
     type: String,
     required: true,
@@ -10,9 +10,13 @@ const vaccineSchema = new Schema({
     type: String,
     required: true,
   },
-  description: String,
-  recommendedAge: String,
-  boosterFrequency: String,
+  age: {
+    type: String,
+  },
+  dateTaken: {
+    type: Date,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("Vaccine", vaccineSchema);
+module.exports = mongoose.model("PetVaccine", petVaccineSchema);
