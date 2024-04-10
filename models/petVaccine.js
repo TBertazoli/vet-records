@@ -6,12 +6,14 @@ const petVaccineSchema = new Schema({
     type: String,
     required: true,
   },
-  vaccineName: {
-    type: String,
-    required: true,
-  },
+  vaccineName: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Vaccine",
+    },
+  ],
   age: {
-    type: String,
+    type: number,
   },
   dateTaken: {
     type: Date,

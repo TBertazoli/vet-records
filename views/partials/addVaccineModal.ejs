@@ -1,0 +1,44 @@
+<div
+  class="modal fade"
+  id="vaccineModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title montserrat-regular">Add a Vaccine</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="/account/:id" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Pet Type</label>
+            <p><%= pet.petType %></p>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Vaccine Name</label>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" name="petDateOfBirth" />
+          </div>
+          <div class="mb-3">
+            <label>Breed</label>
+            <input type="text" class="form-control" name="breed" />
+          </div>
+          <button type="submit" class="montserrat-regular bg-black">
+            SAVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

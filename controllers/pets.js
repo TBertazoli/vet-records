@@ -1,5 +1,4 @@
 const User = require("../models/user");
-// const vaccine = require("../models/vaccine");
 
 module.exports = {
   create,
@@ -29,7 +28,9 @@ async function show(req, res) {
   };
   const user = await User.findById(req.user._id);
   const pet = user.pets.find((pet) => pet.id === req.params.id);
+  const vaccine = pet.vaccine.find({});
   res.render("pets/show", {
     pet,
+    vaccine,
   });
 }

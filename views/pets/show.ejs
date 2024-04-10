@@ -1,4 +1,4 @@
-<%- include('../partials/addPetModal') %>
+<%- include('../partials/addVaccineModal') %>
 <header>
   <%- include('../partials/header') %> <%- include('../partials/navbar') %>
 </header>
@@ -14,8 +14,13 @@
     <p>Breed: <%= pet.breed %></p>
   </div>
   <div class="container-md" mt-5>
-    <button type="button" class="montserrat-regular bg-black">
-      Add Vacine
+    <button
+      type="button"
+      class="montserrat-regular bg-black"
+      data-bs-toggle="modal"
+      data-bs-target="#vaccineModal"
+    >
+      ADD VACCINE
     </button>
   </div>
 </body>
