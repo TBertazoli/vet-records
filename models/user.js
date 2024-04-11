@@ -6,9 +6,6 @@ const vaccineSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Vaccine",
   },
-  age: {
-    type: Number,
-  },
   dateTaken: {
     type: Date,
     required: true,

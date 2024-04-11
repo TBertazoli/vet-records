@@ -31,15 +31,25 @@ function checkAge(birth) {
 async function show(req, res) {
   // temporarly hardcode user id because of nodeamon
   req.user = {
-    _id: "66174bf5ba6b3f88b95c2e0c",
+    _id: "6617ff095cbc73992c51656f",
   };
-  const user = await User.findById(req.user._id);
+  const user = await User.findById(req.user._id).populate({
+    path: "pets",
+    populate: {
+      path: "vaccines",
+      populate: {
+        path: "vaccine",
+      },
+    },
+  });
   const pet = user.pets.find((pet) => pet.id === req.params.id);
   const dob = checkAge(pet.petDateOfBirth);
-  // const vaccines = await Vaccine.find({ species: pet.species });
+  const vaccines = await Vaccine.find({ species: pet.species });
+  console.log(JSON.stringify(pet));
 
   res.render("pets/show", {
     pet,
     dob,
+    vaccines,
   });
 }

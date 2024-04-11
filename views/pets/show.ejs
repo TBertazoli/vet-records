@@ -1,3 +1,4 @@
+<%- include('../partials/addVaccineModal') %>
 <header>
   <%- include('../partials/header') %> <%- include('../partials/navbar') %>
 </header>
@@ -29,15 +30,23 @@
       ADD VACCINE
     </button>
   </div>
+
   <div class="container-md mt-5">
     <table>
       <thead>
         <tr>
-          vaccine
+          <th>Vaccine Name</th>
+          <th>Date Taken</th>
         </tr>
       </thead>
       <tbody>
-        <td></td>
+        <% pet.vaccines.forEach((v)=> { %>
+        <tr>
+          <td><%= v.vaccine.vaccineName %></td>
+          <td><%= v.dateTaken %></td>
+        </tr>
+
+        <% }) %>
       </tbody>
     </table>
   </div>

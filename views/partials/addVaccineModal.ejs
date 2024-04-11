@@ -21,7 +21,7 @@
         <form action="/account/pets/<%=pet.id%>/vaccines" method="POST">
           <div class="mb-3">
             <label class="form-label">Vaccine Name</label>
-            <select name="id">
+            <select name="vaccineId">
               <% vaccines.forEach((v) => { %>
               <option value="<%= v.id%>">
                 <%= v.vaccineName%> - <%=v.description%>
@@ -29,13 +29,9 @@
               <% }) %>
             </select>
           </div>
-
-          <div class="mb-3">
-            <label class="form-label">Pet Age</label>
-          </div>
           <div class="mb-3">
             <label class="form-label">Date Taken</label>
-            <input type="date" />
+            <input type="date" name="dateTaken" />
           </div>
 
           <button type="submit" class="montserrat-regular bg-black">
