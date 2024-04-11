@@ -1,3 +1,4 @@
+const { Aggregate } = require("mongoose");
 const User = require("../models/user");
 const Vaccine = require("../models/vaccine");
 
@@ -21,21 +22,24 @@ async function create(req, res) {
   res.redirect("/account");
 }
 
-function calculateAge(dob) {
-  const dateOfBirth = new Date().getTime() - dob.getTime();
-  console.log(dateOfBirth);
+function checkAge(birth) {
+  const today = new Date();
+  const age = (today - birth) / (1000 * 60 * 60 * 24 * 365);
+  return age;
 }
 
 async function show(req, res) {
   // temporarly hardcode user id because of nodeamon
   req.user = {
-    _id: "6617133070ff2f978d569f02",
+    _id: "66174bf5ba6b3f88b95c2e0c",
   };
   const user = await User.findById(req.user._id);
   const pet = user.pets.find((pet) => pet.id === req.params.id);
-  const vaccines = await Vaccine.find({ species: pet.species });
-  const birthday = res.render("pets/show", {
+  const dob = checkAge(pet.petDateOfBirth);
+  // const vaccines = await Vaccine.find({ species: pet.species });
+
+  res.render("pets/show", {
     pet,
-    vaccines,
+    dob,
   });
 }

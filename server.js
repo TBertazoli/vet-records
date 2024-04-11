@@ -54,8 +54,8 @@ app.use("/about", aboutRouter);
 app.use("/contact", contactRouter);
 app.use("/account", accountRouter);
 app.use("/", petsRouter);
-app.use("/", petVaccineRouter);
-app.use("/", vaccinesRouter);
+// app.use("/", petVaccineRouter);
+// app.use("/", vaccinesRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

@@ -1,4 +1,3 @@
-const PetVaccine = require("../models/petVaccine");
 const User = require("../models/user");
 const Vaccines = require("../models/vaccine");
 

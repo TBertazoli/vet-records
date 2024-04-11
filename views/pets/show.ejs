@@ -1,4 +1,3 @@
-<%- include('../partials/addVaccineModal') %>
 <header>
   <%- include('../partials/header') %> <%- include('../partials/navbar') %>
 </header>
@@ -10,7 +9,14 @@
   </div>
   <div class="container-md mt-5">
     <p>Pet Type: <%= pet.species %></p>
-    <p>Date of Birth: <%= pet.petDateOfBirth %></p>
+    <p>Date of Birth: <%= pet.petDateOfBirth.toLocaleString() %></p>
+    <% if(dob < 0.1) { %> <% const weeks = Math.round(dob * 100) %>
+    <p>Age: <%= weeks %> weeks</p>
+    <% } else if (dob < 1) { %> <%const month = Math.round(dob * 10)%>
+    <p>Age: <%= month %> months</p>
+    <% } else { %> <%const year = Math.round(dob)%>
+    <p>Age: <%= year %> years</p>
+    <% } %>
     <p>Breed: <%= pet.breed %></p>
   </div>
   <div class="container-md" mt-5>
