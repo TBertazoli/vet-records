@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const vaccineSchema = new Schema({
+const vaccineListSchema = new Schema({
   species: {
     type: String,
     required: true,
@@ -15,4 +15,4 @@ const vaccineSchema = new Schema({
   boosterFrequency: String,
 });
 
-module.exports = mongoose.model("Vaccine", vaccineSchema);
+module.exports = mongoose.model("Vaccine", vaccineListSchema);

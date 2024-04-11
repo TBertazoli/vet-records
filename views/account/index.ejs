@@ -25,8 +25,9 @@
             <div class="card-body">
              <h3 class="card-subtitle mb-2 montserrat-regular""><%=p.petName%></h3>
                 <div class="card-text montserrat-regular">
-                <p> Type: <%=p.petType%><br>
+                <p> Type: <%=p.species%><br>
                 <p type="date"> Date of Birth: <%=p.petDateOfBirth%></p>  
+                <p> Breed: <%=p.breed%></p> 
                 </div>  
                 <a href="/account/<%=p._id%>">
                   <button  type="button" class="montserrat-regular bg-black">                
@@ -38,7 +39,7 @@
         </div>      
       <% }); %>
       <% } else { %>
-      <h3>You have not added any Pets yet!</h3>
+        <h3 class="montserrat-regular">You have no Pets associated with you account yet!</h3>
       <% }; %>
       </div>
    </div>

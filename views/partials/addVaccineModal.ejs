@@ -5,7 +5,7 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="max-width: 650px">
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title montserrat-regular">Add a Vaccine</h2>
@@ -18,22 +18,26 @@
       </div>
 
       <div class="modal-body">
-        <form action="/account/:id" method="POST">
-          <div class="mb-3">
-            <label class="form-label">Pet Type</label>
-            <p><%= pet.petType %></p>
-          </div>
+        <form action="/account/pets/<%=pet.id%>/vaccines" method="POST">
           <div class="mb-3">
             <label class="form-label">Vaccine Name</label>
+            <select name="id">
+              <% vaccines.forEach((v) => { %>
+              <option value="<%= v.id%>">
+                <%= v.vaccineName%> - <%=v.description%>
+              </option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Pet Age</label>
           </div>
           <div class="mb-3">
-            <label class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" name="petDateOfBirth" />
+            <label class="form-label">Date Taken</label>
+            <input type="date" />
           </div>
-          <div class="mb-3">
-            <label>Breed</label>
-            <input type="text" class="form-control" name="breed" />
-          </div>
+
           <button type="submit" class="montserrat-regular bg-black">
             SAVE
           </button>
