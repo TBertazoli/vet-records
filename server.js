@@ -17,7 +17,6 @@ const contactRouter = require("./routes/contact");
 const accountRouter = require("./routes/account");
 const petsRouter = require("./routes/pets");
 const petVaccineRouter = require("./routes/petVaccine");
-const vaccinesRouter = require("./routes/vaccine");
 
 const app = express();
 
@@ -55,7 +54,6 @@ app.use("/contact", contactRouter);
 app.use("/account", accountRouter);
 app.use("/", petsRouter);
 app.use("/", petVaccineRouter);
-// app.use("/", vaccinesRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
