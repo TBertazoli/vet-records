@@ -1,0 +1,48 @@
+<%- include('../partials/addPetModal') %>
+<header>
+  <%- include('../partials/header') %> <%- include('../partials/navbar') %>
+</header>
+<body>
+  <div class="container-md about bkg">
+    <div id="hero-text">
+      <h1 class="montserrat-regular">Account</h1>
+      <button
+        type="button"
+        class="montserrat-regular bg-black"
+        data-bs-toggle="modal"
+        data-bs-target="#petModal"
+      >
+        ADD A PET
+      </button>
+    </div>
+  </div>
+  <div class="container-md mt-5 account">
+    <h3 class="montserrat-regular">Hello&nbsp;<%=user.name%>!</h3>
+      <div class="row mt-5">    
+      <% if (user.pets.length) { %> <% user.pets.forEach((p) => { %>
+        <div class="col">
+          <div class="card" style="width: 18rem">            
+            <div class="card-body">
+             <h3 class="card-subtitle mb-2 montserrat-regular""><%=p.petName%></h3>
+                <div class="card-text montserrat-regular">
+                <p> Type: <%=p.species%><br>
+                <p type="date"> Date of Birth: <%=p.petDateOfBirth%></p>  
+                <p> Breed: <%=p.breed%></p> 
+                </div>  
+                <a href="/account/<%=p._id%>">
+                  <button  type="button" class="montserrat-regular bg-black">                
+                    VIEW
+                  </button>
+                </a> 
+            </div>
+          </div>        
+        </div>      
+      <% }); %>
+      <% } else { %>
+        <h3 class="montserrat-regular">You have no Pets associated with you account yet!</h3>
+      <% }; %>
+      </div>
+   </div>
+  
+</body>
+<footer><%- include('../partials/footer') %></footer>

@@ -1,22 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const vaccineSchema = new Schema({
-  name: {
+const vaccineListSchema = new Schema({
+  species: {
     type: String,
     required: true,
   },
-  type: {
+  vaccineName: {
     type: String,
     required: true,
   },
-  age: {
-    type: Number,
-  },
-  dateTaken: {
-    type: Date,
-    required: true,
-  },
+  description: String,
+  recommendedAge: String,
+  boosterFrequency: String,
 });
 
-module.exports = mongoose.model("Vaccine", vaccineSchema);
+module.exports = mongoose.model("Vaccine", vaccineListSchema);

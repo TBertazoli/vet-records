@@ -1,0 +1,134 @@
+<%- include('../partials/addVaccineModal') %>
+<header>
+  <%- include('../partials/header') %> <%- include('../partials/navbar') %>
+</header>
+
+<body>
+  <div class="container-md about bkg">
+    <div id="hero-text">
+      <h1 class="montserrat-regular"><%= pet.petName %></h1>
+    </div>
+  </div>
+  <div class="container-md mt-5">
+    <p>Pet Type: <%= pet.species %></p>
+    <p>Date of Birth: <%= pet.petDateOfBirth.toLocaleDateString() %></p>
+    <% if(dob < 0.1) { %> <% const weeks = Math.round(dob * 100) %>
+    <p>Age: <%= weeks %> weeks</p>
+    <% } else if (dob < 1) { %> <%const month = Math.round(dob * 10)%>
+    <p>Age: <%= month %> months</p>
+    <% } else { %> <%const year = Math.round(dob)%>
+    <p>Age: <%= year %> years</p>
+    <% } %>
+    <p>Breed: <%= pet.breed %></p>
+  </div>
+  <div class="container-md" mt-5>
+    <button
+      type="button"
+      class="montserrat-regular bg-black"
+      data-bs-toggle="modal"
+      data-bs-target="#vaccineModal"
+    >
+      ADD VACCINE
+    </button>
+  </div>
+
+  <div class="container-md mt-5">
+    <% if (pet.vaccines.length) { %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Vaccine Name</th>
+          <th>Date Taken</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pet.vaccines.forEach((v)=> { %>
+        <tr>
+          <td><%= v.vaccine.vaccineName %></td>
+          <td><%= v.dateTaken.toISOString().slice(0,10) %></td>
+          <td>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#editVaccineModal<%=pet.id%><%=v.id%>"
+              ><i class="fa-solid fa-pencil"></i
+            ></a>
+          </td>
+          <td>
+            <form
+              action="/account/pets/<%=pet.id%>/vaccines/<%=v.id%>?_method=DELETE"
+              method="POST"
+            >
+              <a onclick="this.parentNode.submit()"
+                ><i class="fa-solid fa-trash"></i
+              ></a>
+            </form>
+          </td>
+        </tr>
+        <div
+          id="editVaccineModal<%=pet.id%><%=v.id%>"
+          class="modal fade"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" style="max-width: 650px">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title montserrat-regular">Edit a Vaccine</h2>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="/account/pets/<%=pet.id%>/vaccines/<%=v.vaccine.id%>?_method=PUT"
+                  method="POST"
+                >
+                  <div class="mb-3">
+                    <label class="form-label">Vaccine Name</label>
+                    <select name="vaccineId">
+                      <% vaccines.forEach((va) => { %>
+                      <option value="<%= va.id%>" 
+                        <% if (v.vaccine.id === va.id) { %>
+                         selected="selected"
+                        <% } %>>
+
+                        <%= va.vaccineName%> - <%=va.description%>
+
+                      </option>
+                      <% }) %>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Date Taken</label>
+                    <input
+                      type="date"
+                      name="dateTaken"
+                      value="<%=v.dateTaken.toISOString().slice(0,10)%>"
+                    />
+                  </div>
+
+                  <button type="submit" class="montserrat-regular bg-black">
+                    SAVE
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h3 class="montserrat-regular">
+      We have no records of vaccines for this pet yet!
+    </h3>
+    <% } %>
+  </div>
+</body>
+<footer><%- include('../partials/footer') %></footer>

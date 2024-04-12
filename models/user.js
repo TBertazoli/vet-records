@@ -1,32 +1,36 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const animalSchema = new Schema({
-  name: {
+const vaccineSchema = new Schema({
+  vaccine: {
+    type: Schema.Types.ObjectId,
+    ref: "Vaccine",
+  },
+  dateTaken: {
+    type: Date,
+    required: true,
+  },
+});
+
+const petSchema = new Schema({
+  petName: {
     type: String,
   },
-  type: {
+  species: {
     type: String,
     enum: ["dog", "cat"],
     required: true,
   },
 
-  dateOfBirth: {
+  petDateOfBirth: {
     type: Date,
     required: true,
   },
-  Breed: {
+  breed: {
     type: String,
   },
-  color: {
-    type: String,
-  },
-  vaccine: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Vaccine",
-    },
-  ],
+
+  vaccines: [vaccineSchema],
 });
 
 const userSchema = new Schema(
@@ -38,7 +42,7 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
-    animals: [animalSchema],
+    pets: [petSchema],
   },
 
   {

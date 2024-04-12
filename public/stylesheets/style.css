@@ -141,6 +141,17 @@ label {
   font-size: 12px;
 }
 
+/* -----modal------ */
+modal {
+  button {
+    padding: 5px;
+  }
+}
+
+/* -----account----- */
+.account {
+  padding: inherit;
+}
 /* ----footer------ */
 footer {
   .card-text {
