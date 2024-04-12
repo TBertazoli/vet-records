@@ -214,6 +214,16 @@ footer {
   h2 {
     font-size: 30px;
   }
+  .contact {
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  #vax {
+    width: -webkit-fill-available;
+  }
 }
 
 @media (max-width: 768px) {
