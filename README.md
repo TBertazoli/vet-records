@@ -22,7 +22,7 @@ Pet Page
 
 ## Description
 
-VetVaxVault is a mobile user-friendly website designed to streamline the storage and retrieval of crucial information about your beloved pets. VetVaxVault provides a secure and convenient platform to organize and access all your pet-related data. Say goodbye to scattered paperwork and hello to effortless pet care management with VetVaxVault.
+VetVaxVault is a mobile user-friendly website designed to streamline the storage and retrieval of crucial information about your beloved pets. VetVaxVault provides a secure and convenient platform to organize and access all your pet-related data. Say goodbye to scattered paperwork and hello to effortless pet care management with VetVaxVault. All images were AI generated.
 
 ## Table of contents
 
@@ -45,6 +45,7 @@ VetVaxVault is a mobile user-friendly website designed to streamline the storage
 - MongoDB
 - Moongose
 - google Oauth
+- AI
 
 ## Getting Started
 
