@@ -1,3 +1,5 @@
+<%- include('../partials/dogVaccineModal') %> <%-
+include('../partials/catVaccineModal') %>
 <header>
   <%- include('../partials/header') %> <%- include('../partials/navbar') %>
 </header>
@@ -22,7 +24,11 @@
             class="card-img-top"
             src="../images/pet7.jpeg"
             alt="picture of a cat"
+            data-bs-toggle="modal"
+            data-bs-target="#dogModal"
+            style="cursor: pointer"
           />
+
           <div class="card-body montserrat-regular">
             <h5>DOG</h5>
           </div>
@@ -35,6 +41,9 @@
             class="card-img-top"
             src="../images/pet6.jpeg"
             alt="picture of a cat"
+            data-bs-toggle="modal"
+            data-bs-target="#catModal"
+            style="cursor: pointer"
           />
           <div class="card-body montserrat-regular">
             <h5>CAT</h5>
