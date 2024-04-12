@@ -29,10 +29,11 @@ function checkAge(birth) {
 }
 
 async function show(req, res) {
-  // temporarly hardcode user id because of nodeamon
-  req.user = {
-    _id: "6617ff095cbc73992c51656f",
-  };
+  if (req.user === undefined) {
+    res.redirect("/");
+    return;
+  }
+
   const user = await User.findById(req.user._id).populate({
     path: "pets",
     populate: {

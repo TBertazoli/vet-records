@@ -5,7 +5,8 @@ const passport = require("passport");
 
 router.get("/", function (req, res, next) {
   if (req.user === undefined) {
-    res.render("/");
+    res.redirect("/");
+    return;
   }
   res.render("account/index");
 });

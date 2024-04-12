@@ -9,4 +9,6 @@ router.delete(
   petVaccineCtrl.delete
 );
 
+router.put("/account/pets/:petId/vaccines/:vaccineId", petVaccineCtrl.update);
+
 module.exports = router;

@@ -3,6 +3,7 @@ const User = require("../models/user");
 module.exports = {
   addVaccineToPet,
   delete: deleteVaccine,
+  update,
 };
 
 async function addVaccineToPet(req, res) {
@@ -17,9 +18,6 @@ async function addVaccineToPet(req, res) {
 }
 
 async function deleteVaccine(req, res) {
-  req.user = {
-    _id: "6617ff095cbc73992c51656f",
-  };
   const user = await User.findById(req.user._id).populate({
     path: "pets",
     populate: {
@@ -34,6 +32,26 @@ async function deleteVaccine(req, res) {
     (v) => v.id === req.params.vaccineId
   );
   pet.vaccines.splice(vaccineIndex, 1);
+  await user.save();
+  res.redirect(`/account/${pet.id}`);
+}
+
+async function update(req, res) {
+  const user = await User.findById(req.user._id).populate({
+    path: "pets",
+    populate: {
+      path: "vaccines",
+      populate: {
+        path: "vaccine",
+      },
+    },
+  });
+  const pet = user.pets.find((pet) => pet.id === req.params.petId);
+  const assingVaccine = pet.vaccines.find((vaccine) => {
+    return vaccine.vaccine.id === req.params.vaccineId;
+  });
+  assingVaccine.dateTaken = req.body.dateTaken;
+  assingVaccine.vaccine = req.body.vaccineId;
   await user.save();
   res.redirect(`/account/${pet.id}`);
 }

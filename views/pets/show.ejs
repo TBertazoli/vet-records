@@ -2,6 +2,7 @@
 <header>
   <%- include('../partials/header') %> <%- include('../partials/navbar') %>
 </header>
+
 <body>
   <div class="container-md about bkg">
     <div id="hero-text">
@@ -46,9 +47,13 @@
         <% pet.vaccines.forEach((v)=> { %>
         <tr>
           <td><%= v.vaccine.vaccineName %></td>
-          <td><%= v.dateTaken.toLocaleDateString() %></td>
+          <td><%= v.dateTaken.toISOString().slice(0,10) %></td>
           <td>
-            <a><i class="fa-solid fa-pencil"></i></a>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#editVaccineModal<%=pet.id%><%=v.id%>"
+              ><i class="fa-solid fa-pencil"></i
+            ></a>
           </td>
           <td>
             <form
@@ -61,7 +66,61 @@
             </form>
           </td>
         </tr>
+        <div
+          id="editVaccineModal<%=pet.id%><%=v.id%>"
+          class="modal fade"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" style="max-width: 650px">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title montserrat-regular">Edit a Vaccine</h2>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="/account/pets/<%=pet.id%>/vaccines/<%=v.vaccine.id%>?_method=PUT"
+                  method="POST"
+                >
+                  <div class="mb-3">
+                    <label class="form-label">Vaccine Name</label>
+                    <select name="vaccineId">
+                      <% vaccines.forEach((va) => { %>
+                      <option value="<%= va.id%>" 
+                        <% if (v.vaccine.id === va.id) { %>
+                         selected="selected"
+                        <% } %>>
 
+                        <%= va.vaccineName%> - <%=va.description%>
+
+                      </option>
+                      <% }) %>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Date Taken</label>
+                    <input
+                      type="date"
+                      name="dateTaken"
+                      value="<%=v.dateTaken.toISOString().slice(0,10)%>"
+                    />
+                  </div>
+
+                  <button type="submit" class="montserrat-regular bg-black">
+                    SAVE
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <% }) %>
       </tbody>
     </table>
