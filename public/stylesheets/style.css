@@ -149,6 +149,15 @@ modal {
   }
 }
 
+/* ------vaccine----- */
+.dogCard {
+  padding-right: 10px;
+}
+
+.catCard {
+  padding-left: 10px;
+}
+
 /* -----account----- */
 .account {
   padding: inherit;
@@ -223,6 +232,17 @@ footer {
 
   #vax {
     width: -webkit-fill-available;
+  }
+
+  .vaccine {
+    display: flex;
+    flex-direction: column;
+  }
+  .dogCard {
+    padding: 0px;
+  }
+  .catCard {
+    padding: 0px;
   }
 }
 
