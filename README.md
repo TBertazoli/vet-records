@@ -50,8 +50,8 @@ VetVaxVault is a mobile user-friendly website designed to streamline the storage
 ## Getting Started
 
 1 - Access the [website](https://vet-records-64d6176bd1f1.herokuapp.com/).  
-2 - Upon acessing the website the user can access the about me page anc contact page.  
-3 - To be able to access other features the user has to login firts using google oauth.  
+2 - Upon acessing the website the user can access the about me page and contact page.  
+3 - To be able to access other features the user has to login first using google oauth.  
 4 - After Login the user lands on the account page where he has access to the account features.  
 5 - User can create a Pet.  
 6 - User can add/edit and delete vacination information from each pet.  
