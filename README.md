@@ -41,7 +41,7 @@ VetVaxVault is a mobile user-friendly website designed to streamline the storage
 - JavaScript
 - Bootstrap
 - ejs
-- Exprees.js
+- Express.js
 - MongoDB
 - Moongose
 - google Oauth

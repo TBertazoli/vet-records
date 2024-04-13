@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const dogsCtrl = require("../controllers/vaccines");
+const vaccineCtrl = require("../controllers/vaccines");
 
-router.get("/vaccines", dogsCtrl.show);
+router.get("/", vaccineCtrl.show);
 
 module.exports = router;
