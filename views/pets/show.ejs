@@ -11,7 +11,7 @@
   </div>
   <div class="container-md mt-5">
     <p>Pet Type: <%= pet.species %></p>
-    <p>Date of Birth: <%= pet.petDateOfBirth.toLocaleDateString() %></p>
+    <p>Date of Birth: <%= pet.petDateOfBirth.toISOString().slice(0,10) %></p>
     <% if(dob < 0.1) { %> <% const weeks = Math.round(dob * 100) %>
     <p>Age: <%= weeks %> weeks</p>
     <% } else if (dob < 1) { %> <%const month = Math.round(dob * 10)%>
@@ -66,6 +66,7 @@
             </form>
           </td>
         </tr>
+        <!-- edit vaccine modal -->
         <div
           id="editVaccineModal<%=pet.id%><%=v.id%>"
           class="modal fade"

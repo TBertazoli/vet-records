@@ -26,14 +26,30 @@
              <h3 class="card-subtitle mb-2 montserrat-regular""><%=p.petName%></h3>
                 <div class="card-text montserrat-regular">
                 <p> Type: <%=p.species%><br>
-                <p type="date"> Date of Birth: <%=p.petDateOfBirth%></p>  
+                <p type="date"> Date of Birth: <%=p.petDateOfBirth.toISOString().slice(0,10)%></p>  
                 <p> Breed: <%=p.breed%></p> 
                 </div>  
-                <a href="/account/<%=p._id%>">
-                  <button  type="button" class="montserrat-regular bg-black">                
-                    VIEW
-                  </button>
-                </a> 
+                <div class="row">
+                  <div class ="col">
+                    <a href="/account/<%=p._id%>">
+                      <button  type="button" class="montserrat-regular bg-black">                
+                        VIEW PET
+                      </button>
+                    </a> 
+                  </div>
+                  <div class="col">
+                    <form
+                    action="/account/pets/<%=p.id%>?_method=DELETE"
+                    method="POST"
+                  >
+                    <a onclick="this.parentNode.submit()"
+                      >
+                      <button type="button" class="montserrat-regular bg-black">
+                        DELETE PET
+                      </button></a>
+                  </form>
+                  </div> 
+                </div>
             </div>
           </div>        
         </div>      
