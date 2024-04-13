@@ -5,6 +5,7 @@ const Vaccine = require("../models/vaccine");
 module.exports = {
   create,
   show,
+  delete: deletePet,
 };
 
 async function create(req, res) {
@@ -53,4 +54,14 @@ async function show(req, res) {
     dob,
     vaccines,
   });
+}
+
+async function deletePet(req, res) {
+  const user = await User.findById(req.user._id).populate({
+    path: "pets",
+  });
+  const pet = user.pets.findIndex((p) => p.id === req.params.petId);
+  user.pets.splice(pet, 1);
+  await user.save();
+  res.redirect(`/account`);
 }

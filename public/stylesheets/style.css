@@ -250,4 +250,8 @@ footer {
   #nav {
     max-width: none;
   }
+
+  .vaccineList {
+    font-size: 10px;
+  }
 }
